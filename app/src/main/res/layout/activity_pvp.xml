@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".PVP">
 
     <GridLayout
@@ -97,6 +98,8 @@
         android:id="@+id/home"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reset"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +109,8 @@
         android:id="@+id/AI"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/ai"
+        android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/reset"
@@ -115,6 +120,8 @@
         android:id="@+id/reset"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/restart"
+        android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
