@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.krizickruzic.ui.theme.checkEndGame
+import com.example.krizickruzic.ui.theme.jelPobjedaAI
+import com.example.krizickruzic.ui.theme.prostoriStavljanja
 
 class PVE : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,144 +31,31 @@ class PVE : AppCompatActivity() {
         )
 
 
-        fun prostoriStavljanja(board: Array<Array<Boolean?>>) {
-            for(i in 0..0) {
-                if (board[i][0] != null && board[i][1] != null && board[i][2] == null) {
-                    place[i][2] = false
-                    buttons[i][2].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] != null && board[i][1] == null && board[i][2] != null) {
-                    place[i][1] = false
-                    buttons[i][1].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] == null && board[i][1] != null && board[i][2] != null) {
-                    place[i][0] = false
-                    buttons[i][0].setBackgroundResource(R.drawable.oimage)
-                }
-
-                else if (board[0][i] != null && board[1][i] != null && board[2][i] == null) {
-                    place[0][i] = false
-                    buttons[0][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] != null && board[1][i] == null && board[2][i] != null) {
-                    place[1][i] = false
-                    buttons[1][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] == null && board[1][i] != null && board[2][i] != null) {
-                    place[0][2] = false
-                    buttons[0][2].setBackgroundResource(R.drawable.oimage)
-                }
-
-
-            }
-            for(i in 1..1) {
-                if (board[i][0] != null && board[i][1] != null && board[i][2] == null) {
-                    place[i][2] = false
-                    buttons[i][2].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] != null && board[i][1] == null && board[i][2] != null) {
-                    place[i][1] = false
-                    buttons[i][1].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] == null && board[i][1] != null && board[i][2] != null) {
-                    place[i][0] = false
-                    buttons[i][0].setBackgroundResource(R.drawable.oimage)
-                }
-
-                else if (board[0][i] != null && board[1][i] != null && board[2][i] == null) {
-                    place[0][i] = false
-                    buttons[0][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] != null && board[1][i] == null && board[2][i] != null) {
-                    place[1][i] = false
-                    buttons[1][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] == null && board[1][i] != null && board[2][i] != null) {
-                    place[0][2] = false
-                    buttons[0][2].setBackgroundResource(R.drawable.oimage)
-                }
-
-
-            }
-
-
-            for(i in 2..2) {
-                if (board[i][0] != null && board[i][1] != null && board[i][2] == null) {
-                    place[i][2] = false
-                    buttons[i][2].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] != null && board[i][1] == null && board[i][2] != null) {
-                    place[i][1] = false
-                    buttons[i][1].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[i][0] == null && board[i][1] != null && board[i][2] != null) {
-                    place[i][0] = false
-                    buttons[i][0].setBackgroundResource(R.drawable.oimage)
-                }
-
-                else if (board[0][i] != null && board[1][i] != null && board[2][i] == null) {
-                    place[0][i] = false
-                    buttons[0][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] != null && board[1][i] == null && board[2][i] != null) {
-                    place[1][i] = false
-                    buttons[1][i].setBackgroundResource(R.drawable.oimage)
-                }
-                else if (board[0][i] == null && board[1][i] != null && board[2][i] != null) {
-                    place[0][2] = false
-                    buttons[0][2].setBackgroundResource(R.drawable.oimage)
-                }
-
-
-            }
-
-
-            if (board[0][0] != null && board[1][1] != null && board[2][2] == null) {
-                place[2][2] = false
-                buttons[2][2].setBackgroundResource(R.drawable.oimage)
-            }
-            else if (board[0][0] != null && board[1][1] == null && board[2][2] != null) {
-                place[1][1] = false
-                buttons[1][1].setBackgroundResource(R.drawable.oimage)
-            }
-            else if (board[0][0] == null && board[1][1] != null && board[2][2] != null) {
-                place[0][0] = false
-                buttons[0][0].setBackgroundResource(R.drawable.oimage)
-            }
-
-            else if (board[0][2] != null && board[1][1] != null && board[2][0] == null) {
-                place[2][0] = false
-                buttons[2][0].setBackgroundResource(R.drawable.oimage)
-            }
-            else if(board[0][2] != null && board[1][1] == null && board[2][0] != null) {
-                place[1][1] = false
-                buttons[1][1].setBackgroundResource(R.drawable.oimage)
-            }
-            else if(board[0][2] == null && board[1][1] != null && board[2][0] != null) {
-                place[0][2] = false
-                buttons[0][2].setBackgroundResource(R.drawable.oimage)
-            }
-        }
-
 
 
         fun kaka(a: Int): Int {
             println("a")
-            if(place.flatten().all { it == null }) {
+            /*if(place.flatten().all { it == null }) {
                 println("alalalala")
                 place[0][0] = false
                 buttons[1][1].setBackgroundResource(R.drawable.oimage)
+                return 1
             }
             if(place.flatten().count { it != null } == 1 && (place[0][0] == true || place[0][2] == true || place[2][0] == true || place[2][2] == true)) {
                 place[1][1] = false
                 buttons[1][1].setBackgroundResource(R.drawable.oimage)
-            }
+                return 1
+            }*/
 
             //prostoriStavljanja(place)
 
+            val (i, j) = jelPobjedaAI(place)
+            place[i][j] = false
+            buttons[i][j].setBackgroundResource(R.drawable.oimage)
+
             MainActivity.playerTurn = MainActivity.playerTurn.not()
 
-            prostoriStavljanja(place)
+            //prostoriStavljanja(place)
 
             return 1
         }
@@ -179,8 +69,13 @@ class PVE : AppCompatActivity() {
                         if (place[i][j] == null) {
                             place[i][j] = true
                             buttons[i][j].setBackgroundResource(R.drawable.ximage)
+                            var c = checkEndGame(place)
+                            MainActivity.playerTurn = !MainActivity.playerTurn
+                            println(c)
                             val k = kaka(1)
                             MainActivity.playerTurn = !MainActivity.playerTurn
+                            var b = checkEndGame(place)
+                            println(b)
                         }
                     }
                 }
@@ -211,17 +106,14 @@ class PVE : AppCompatActivity() {
             return null
         }
 
-
-
         if (!MainActivity.playerTurn) {
-            println("a")
-            if(place.all { it == null }) {
+            if(place.all { row -> row.all { it == null }}) {
                 place[0][0] = false
             }
-            if(place.count { it != null } == 1 && (place[0][0] == true || place[0][2] == true || place[2][0] == true || place[2][2] == true)) {
+            /*if(place.count { it != null } == 1 && (place[0][0] == true || place[0][2] == true || place[2][0] == true || place[2][2] == true)) {
                 place[1][1] = false
                 buttons[1][1].setBackgroundResource(R.drawable.oimage)
-            }
+            }*/
 
             prostoriStavljanja(place)
 

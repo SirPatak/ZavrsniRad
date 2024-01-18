@@ -8,8 +8,8 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
     companion object {
         var playerTurn: Boolean = true
-        //var xPobjede: Int = 0
-        //var oPobjede: Int = 0
+        var xPobjede: Int = 0
+        var oPobjede: Int = 0
     }
 
 
