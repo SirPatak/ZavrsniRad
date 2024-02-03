@@ -5,7 +5,6 @@ import com.example.krizickruzic.MainActivity
 import com.example.krizickruzic.R
 
 fun checkEndGame(place: Array<Array<Boolean?>>): Boolean? {
-    println("papa franjo")
     if (
         (place[0][0] == MainActivity.playerTurn && place[0][1] == MainActivity.playerTurn && place[0][2] == MainActivity.playerTurn) ||
         (place[1][0] == MainActivity.playerTurn && place[1][1] == MainActivity.playerTurn && place[1][2] == MainActivity.playerTurn) ||
@@ -22,18 +21,13 @@ fun checkEndGame(place: Array<Array<Boolean?>>): Boolean? {
         return null
     }
     else {
-        /*for(i in 0..2) {
-            for(j in 0..2) {
-                print(place[i][j])
-                print(" ")
-            }
-            println()
-        }*/
         return false
     }
 }
 
 fun prostoriStavljanja(place: Array<Array<Boolean?>>): Pair<Int, Int> {
+    var kraj1 = 0
+    var kraj2 = 0
     if (place[0][0] != null && place[0][1] != null && place[0][2] == null) {
         return Pair(0,2)
     }
@@ -118,41 +112,32 @@ fun prostoriStavljanja(place: Array<Array<Boolean?>>): Pair<Int, Int> {
         return Pair(1,1)
     }
     else {
-        return Pair(0,0)
-    }
-}
-
-
-fun prostoriStavljanja1(place: Array<Array<Boolean?>>): Pair<Int, Int>? {
-    for (i in 0..2) {
-        for (j in 0..2) {
-            if (place[i][j] == null && place[i].filterNotNull().size == 2) {
-                return Pair(i, j)
-            }
-            if (place[j][i] == null && place.map { it[i] }.filterNotNull().size == 2) {
-                return Pair(j, i)
+        for(i in 0..2) {
+            for(j in 0..2) {
+                if(place[i][j] == null) {
+                    return Pair(i,j)
+                }
             }
         }
-    }
-    if (place[1][1] == null) {
-        return Pair(1, 1)
-    }
-    else {
-        return Pair(1,0)
+        for(i in 0..2) {
+            for(j in 0..2) {
+                if(place[i][j] == false) {
+                    kraj1 = i
+                    kraj2 = j
+                }
+            }
+        }
+        return Pair(kraj1,kraj2)
     }
 }
 
-
-
 fun jelPobjedaAI(place: Array<Array<Boolean?>>): Pair<Int, Int> {
-    println("kaka")
     var rezultat = Pair(-1, -1)
     for(i in 0..2) {
         for(j in 0..2) {
             if(place[i][j] == null) {
                 place[i][j] = false
                 if(checkEndGame(place)==true) {
-                    println("hihi")
                     rezultat = Pair(i,j)
                     place[i][j] = null
                     return rezultat
@@ -161,15 +146,12 @@ fun jelPobjedaAI(place: Array<Array<Boolean?>>): Pair<Int, Int> {
             }
         }
     }
-
-    //MainActivity.playerTurn = !MainActivity.playerTurn
 
     for(i in 0..2) {
         for(j in 0..2) {
             if(place[i][j] == null) {
                 place[i][j] = true
                 if(checkEndGame(place)==true) {
-                    println("haha")
                     rezultat = Pair(i,j)
                     place[i][j] = null
                     return rezultat
@@ -178,54 +160,6 @@ fun jelPobjedaAI(place: Array<Array<Boolean?>>): Pair<Int, Int> {
             }
         }
     }
-    //MainActivity.playerTurn = !MainActivity.playerTurn
-    println("kakadudu")
     rezultat = prostoriStavljanja(place)
     return rezultat
-}
-
-
-enum class Win {
-    PLAYER, AI, DRAW
-}
-
-fun checkEndGame1(m: Array<Boolean?>): Win? {
-    var win: Win? = null
-    if (
-        (m[0] == true && m[1] == true && m[2] == true) ||
-        (m[3] == true && m[4] == true && m[5] == true) ||
-        (m[6] == true && m[7] == true && m[8] == true) ||
-        (m[0] == true && m[3] == true && m[6] == true) ||
-        (m[1] == true && m[4] == true && m[7] == true) ||
-        (m[2] == true && m[5] == true && m[8] == true) ||
-        (m[0] == true && m[4] == true && m[8] == true) ||
-        (m[2] == true && m[4] == true && m[6] == true)
-    )
-        win = Win.PLAYER
-
-
-
-    if (
-        (m[0] == false && m[1] == false && m[2] == false) ||
-        (m[3] == false && m[4] == false && m[5] == false) ||
-        (m[6] == false && m[7] == false && m[8] == false) ||
-        (m[0] == false && m[3] == false && m[6] == false) ||
-        (m[1] == false && m[4] == false && m[7] == false) ||
-        (m[2] == false && m[5] == false && m[8] == false) ||
-        (m[0] == false && m[4] == false && m[8] == false) ||
-        (m[2] == false && m[4] == false && m[6] == false)
-    )
-        win = Win.AI
-
-    if (win == null) {
-        var available = false
-        for (i in 0..8) {
-            if(m[i] == null)
-                available = true
-        }
-        if(!available)
-            win = Win.DRAW
-    }
-    println(win)
-    return win
 }

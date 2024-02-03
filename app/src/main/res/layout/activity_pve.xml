@@ -9,8 +9,8 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:alignmentMode="alignBounds"
         android:background="#646464"
         android:columnCount="3"
@@ -93,21 +93,23 @@
             android:layout_margin="8dp" />
     </GridLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/home"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:foreground="@drawable/home"
+        android:background="@drawable/home"
         android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pvp"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:foreground="@drawable/pvp"
         android:background="@drawable/pvp"
         android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,11 +117,12 @@
         app:layout_constraintStart_toEndOf="@+id/reset"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/reset"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:foreground="@drawable/restart"
+        android:background="@drawable/restart"
         android:backgroundTint="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,5 +186,41 @@
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/opobjeda"
         app:layout_constraintTop_toBottomOf="@+id/xplus" />
+
+    <TextView
+        android:id="@+id/brojrunde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=". runda"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/runda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/brojrunde"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pobjede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brojrunde" />
+
+    <TextView
+        android:id="@+id/postotakpobjede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pobjede"
+        app:layout_constraintTop_toBottomOf="@id/brojrunde" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

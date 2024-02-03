@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".PVE">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/home"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/background"
+        android:foreground="@drawable/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reset"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/restart"
+        android:backgroundTint="@color/background"
+        android:foreground="@drawable/restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/brojrundi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broj odigranih rundi: "
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/brojrundi"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postotakprolaznosti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postotak Prolaznosti: "
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brojrundi" />
+
+    <TextView
+        android:id="@+id/postotak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/postotakprolaznosti"
+        app:layout_constraintTop_toBottomOf="@+id/brojrundi" />
+
+    <TextView
+        android:id="@+id/posto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/postotak"
+        app:layout_constraintTop_toBottomOf="@id/brojrundi" />
+
+    <TextView
+        android:id="@+id/brojpobjeda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broj pobjeda: "
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postotakprolaznosti" />
+
+    <TextView
+        android:id="@+id/pobjede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/brojpobjeda"
+        app:layout_constraintTop_toBottomOf="@id/postotakprolaznosti" />
+
+    <TextView
+        android:id="@+id/gubljenje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broj gubitaka: "
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brojpobjeda" />
+
+    <TextView
+        android:id="@+id/gubitci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/gubljenje"
+        app:layout_constraintTop_toBottomOf="@id/brojpobjeda" />
+
+    <TextView
+        android:id="@+id/odustati"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forfeit: "
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gubljenje" />
+
+    <TextView
+        android:id="@+id/forfeit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/odustati"
+        app:layout_constraintTop_toBottomOf="@id/gubljenje" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
