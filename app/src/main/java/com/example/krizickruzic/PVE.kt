@@ -113,6 +113,7 @@ class PVE : AppCompatActivity() {
         restart.setOnClickListener {
             MainActivity.forfeit++
             MainActivity.oPobjedeAI++
+            MainActivity.roundAI++
             val gameDataHelper = GameDataHelper(this)
             gameDataHelper.saveGameData(playerTurn, MainActivity.roundAI, MainActivity.xPobjedeAI, MainActivity.oPobjedeAI, MainActivity.forfeit)
 
