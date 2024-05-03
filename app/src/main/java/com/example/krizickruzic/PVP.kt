@@ -22,10 +22,10 @@ class PVP : AppCompatActivity() {
         val brojRunde = findViewById<TextView>(R.id.runda)
         brojRunde.text = MainActivity.roundPvP.toString()
 
-        if(MainActivity.roundPvP.mod(2) == 0) {
+        if(MainActivity.roundPvP.mod(2) == 1) {
             MainActivity.playerTurn = true
         }
-        if(MainActivity.roundPvP.mod(2) == 1) {
+        if(MainActivity.roundPvP.mod(2) == 0) {
             MainActivity.playerTurn = false
         }
 
@@ -59,6 +59,7 @@ class PVP : AppCompatActivity() {
                             val intent= Intent(this, PVP::class.java)
                             startActivity(intent)
                         }
+                        MainActivity.playerTurn = MainActivity.playerTurn.not()
                     }
                     else if (!MainActivity.playerTurn && place[i][j] == null) {
                         place[i][j] = false
@@ -79,8 +80,8 @@ class PVP : AppCompatActivity() {
                             val intent= Intent(this, PVP::class.java)
                             startActivity(intent)
                         }
-                    }
                         MainActivity.playerTurn = MainActivity.playerTurn.not()
+                    }
                 }
             }
         }

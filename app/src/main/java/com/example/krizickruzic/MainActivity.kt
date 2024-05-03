@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         var oPobjedeAI: Int = 0
         var forfeit: Int = 0
 
-        var roundPvP: Int = 0
+        var roundPvP: Int = 1
         var xPobjedePvP: Int = 0
         var oPobjedePvP: Int = 0
 
